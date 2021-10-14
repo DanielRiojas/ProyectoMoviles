@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/user197925/Desktop/ProyectoTEC/ProyectoTEC/ViewControllerCambiarContrasena.swift">
-   </FileRef>
-   <FileRef
       location = "group:ProyectoTEC.xcodeproj">
    </FileRef>
    <FileRef
