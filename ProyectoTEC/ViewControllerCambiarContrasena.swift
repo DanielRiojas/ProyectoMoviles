@@ -1,6 +1,6 @@
 //
 //  ViewControllerCambiarContrasena.swift
-//  
+//
 //
 //  Created by user197925 on 10/11/21.
 //
@@ -19,7 +19,6 @@ class ViewControllerCambiarContrasena: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         // Button Configuration
         cambiarContrasena.layer.cornerRadius = 25
         //cambiarContrasena.addTarget(self, action: #selector(signInGoogle(_:)), for: .touchUpInside)
@@ -43,6 +42,13 @@ class ViewControllerCambiarContrasena: UIViewController {
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if tf_nuevaContrasena.text! == "" || tf_confirmaContrasena.text! == "" {
             let alerta = UIAlertController(title: "Error", message: "Coloca datos en todos los campos", preferredStyle: .alert)
+            let accion = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alerta.addAction(accion)
+            present(alerta, animated: true, completion: nil)
+            return false
+        }
+        else if (tf_nuevaContrasena.text! != tf_confirmaContrasena.text!) {
+            let alerta = UIAlertController(title: "Error", message: "Las contraseñas no coinciden", preferredStyle: .alert)
             let accion = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alerta.addAction(accion)
             present(alerta, animated: true, completion: nil)
