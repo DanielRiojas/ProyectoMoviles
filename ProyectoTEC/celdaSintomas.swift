@@ -3,7 +3,7 @@
 //  ProyectoTEC
 //
 //  Created by Daniel Riojas on 03/11/21.
-//
+//prueba beto xcode
 
 import UIKit
 
