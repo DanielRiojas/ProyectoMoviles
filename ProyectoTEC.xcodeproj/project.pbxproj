@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E659FB22733971E000D3F54 /* celdaSintomas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E659FB12733971E000D3F54 /* celdaSintomas.swift */; };
+		3E659FB52733A270000D3F54 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E659FB42733A270000D3F54 /* CustomTableViewCell.swift */; };
 		3E7D573D27189AF700435630 /* ViewControllerCambiarContrasena.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7D573C27189AF700435630 /* ViewControllerCambiarContrasena.swift */; };
-		64A7F9452718D27700E03786 /* BaseDatos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A7F9442718D27700E03786 /* BaseDatos.swift */; };
-		64A7F9482718D28600E03786 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A7F9472718D28600E03786 /* Location.swift */; };
+		3EC75D6B27193443006FD151 /* ViewControllerCofigPerfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC75D6A27193443006FD151 /* ViewControllerCofigPerfil.swift */; };
+		3EEAEAEA2718A6AA00F3A2EF /* ViewControllerMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEAEAE92718A6AA00F3A2EF /* ViewControllerMenu.swift */; };
 		C473F2F26D3A4B020AAB913E /* Pods_ProyectoTEC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2411556C3B513E9A8CFB65E7 /* Pods_ProyectoTEC.framework */; };
 		EB1B5F272718831B00F9373F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB1B5F262718831B00F9373F /* GoogleService-Info.plist */; };
 		EB2D88DB272706C6006EC15A /* ViewControllerDoctorVistaGeneral.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2D88DA272706C6006EC15A /* ViewControllerDoctorVistaGeneral.swift */; };
@@ -25,7 +27,11 @@
 
 /* Begin PBXFileReference section */
 		2411556C3B513E9A8CFB65E7 /* Pods_ProyectoTEC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProyectoTEC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E659FB12733971E000D3F54 /* celdaSintomas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = celdaSintomas.swift; sourceTree = "<group>"; };
+		3E659FB42733A270000D3F54 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		3E7D573C27189AF700435630 /* ViewControllerCambiarContrasena.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerCambiarContrasena.swift; sourceTree = "<group>"; };
+		3EC75D6A27193443006FD151 /* ViewControllerCofigPerfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerCofigPerfil.swift; sourceTree = "<group>"; };
+		3EEAEAE92718A6AA00F3A2EF /* ViewControllerMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMenu.swift; sourceTree = "<group>"; };
 		58B1DCE690A4D6BD42CA714F /* Pods-ProyectoTEC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoTEC.release.xcconfig"; path = "Target Support Files/Pods-ProyectoTEC/Pods-ProyectoTEC.release.xcconfig"; sourceTree = "<group>"; };
 		64A7F9442718D27700E03786 /* BaseDatos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDatos.swift; sourceTree = "<group>"; };
 		64A7F9472718D28600E03786 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -103,8 +109,10 @@
 				EB8682F3271510050076759B /* ViewControllerOlvidarContrasena.swift */,
 				EBAA1B07270B529400AD32AB /* ViewController.swift */,
 				EBAA1B09270B529400AD32AB /* Main.storyboard */,
-				64A7F9442718D27700E03786 /* BaseDatos.swift */,
-				64A7F9472718D28600E03786 /* Location.swift */,
+				3EC75D6A27193443006FD151 /* ViewControllerCofigPerfil.swift */,
+				3E659FB42733A270000D3F54 /* CustomTableViewCell.swift */,
+				3EEAEAE92718A6AA00F3A2EF /* ViewControllerMenu.swift */,
+				3E659FB12733971E000D3F54 /* celdaSintomas.swift */,
 				EB3CF02D270FB039000E4508 /* ViewControllerRegistrate.swift */,
 				EBAA1B0C270B529B00AD32AB /* Assets.xcassets */,
 				EBAA1B0E270B529B00AD32AB /* LaunchScreen.storyboard */,
@@ -247,13 +255,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64A7F9452718D27700E03786 /* BaseDatos.swift in Sources */,
+				3EEAEAEA2718A6AA00F3A2EF /* ViewControllerMenu.swift in Sources */,
 				EBAA1B08270B529400AD32AB /* ViewController.swift in Sources */,
 				EB2D88DB272706C6006EC15A /* ViewControllerDoctorVistaGeneral.swift in Sources */,
 				64A7F9482718D28600E03786 /* Location.swift in Sources */,
 				EBAA1B04270B529400AD32AB /* AppDelegate.swift in Sources */,
+				3EC75D6B27193443006FD151 /* ViewControllerCofigPerfil.swift in Sources */,
 				3E7D573D27189AF700435630 /* ViewControllerCambiarContrasena.swift in Sources */,
 				EB3CF02E270FB039000E4508 /* ViewControllerRegistrate.swift in Sources */,
+				3E659FB52733A270000D3F54 /* CustomTableViewCell.swift in Sources */,
+				3E659FB22733971E000D3F54 /* celdaSintomas.swift in Sources */,
 				EBAA1B06270B529400AD32AB /* SceneDelegate.swift in Sources */,
 				EB8682F4271510050076759B /* ViewControllerOlvidarContrasena.swift in Sources */,
 			);
