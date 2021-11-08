@@ -13,7 +13,7 @@ class ViewControllerOlvidarContrasena: UIViewController {
     @IBOutlet weak var tf_apellidoPaterno: UITextField!
     @IBOutlet weak var tf_apellidoMaterno: UITextField!
     @IBOutlet weak var tf_fechaNacimiento: UITextField!
-    @IBOutlet weak var tf_correo: BindingTextField!
+    @IBOutlet weak var tf_correo: UITextField!
     
     @IBOutlet weak var verificaDatos: UIButton! // Buttons
     
@@ -23,9 +23,6 @@ class ViewControllerOlvidarContrasena: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Setup email validation
-        emailValidation()
         
         // Textfield with date
         dateTextfield()
@@ -63,23 +60,6 @@ class ViewControllerOlvidarContrasena: UIViewController {
         tf_fechaNacimiento.text = dateFormatter.string(from: datePicker!.date)
         view.endEditing(true)
         }
-    
-    // MARK: - Email validation
-    func emailValidation() {
-        tf_correo.bind { [weak self] (text) in if let isValid = self?.isValidEmail(text) {
-                if (isValid == true) {
-                    self!.emailIsValid = true
-                }
-            }
-        }
-    }
-    
-    func isValidEmail(_ email: String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailPred.evaluate(with: email)
-    }
     
 
     

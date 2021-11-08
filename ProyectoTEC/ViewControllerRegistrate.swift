@@ -11,7 +11,7 @@ class ViewControllerRegistrate: UIViewController {
     
     @IBOutlet weak var registrate: UIButton! // Button
     
-    @IBOutlet weak var tf_correo: BindingTextField! // Textfield
+    @IBOutlet weak var tf_correo: UITextField! // Textfield
     @IBOutlet weak var tf_contrasena: UITextField!
     @IBOutlet weak var tf_repiteContrasena: UITextField!
     @IBOutlet weak var tf_nombre: UITextField!
@@ -27,8 +27,6 @@ class ViewControllerRegistrate: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Setup email validation
-        emailValidation()
         
         // Textfield with date
         dateTextfield()
@@ -72,26 +70,15 @@ class ViewControllerRegistrate: UIViewController {
         tf_fechaNacimiento.text = dateFormatter.string(from: datePicker!.date)
         view.endEditing(true)
         }
-    
+
     
     // MARK: - Email validation
-    func emailValidation() {
-        tf_correo.bind { [weak self] (text) in if let isValid = self?.isValidEmail(text) {
-                if (isValid == true) {
-                    self!.emailIsValid = true
-                }
-            }
-        }
-    }
+    func isValidEmail(emailID:String) -> Bool {
+       let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+       let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+       return emailTest.evaluate(with: emailID)
+   }
     
-    func isValidEmail(_ email: String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailPred.evaluate(with: email)
-    }
-    
-
     
     // MARK: - Prepare for segue
     
@@ -103,7 +90,7 @@ class ViewControllerRegistrate: UIViewController {
             present(alerta, animated: true, completion: nil)
             return false
         }
-        else if (emailIsValid == false) {
+        else if (isValidEmail(emailID: tf_correo.text!) == false ) {
             let alerta = UIAlertController(title: "Error", message: "Correo electrónico no es valido", preferredStyle: .alert)
             let accion = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alerta.addAction(accion)

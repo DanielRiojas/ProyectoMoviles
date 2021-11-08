@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var olvidasteContrasena: UIButton!
     @IBOutlet weak var registrate: UIButton!
     
-    @IBOutlet weak var tf_correoElectronico: BindingTextField! // Textfield
+    @IBOutlet weak var tf_correoElectronico: UITextField! // Textfield
     @IBOutlet weak var tf_contrasena: UITextField!
     
     var correoEletronico = ""
@@ -63,9 +63,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Setup email validation
-        emailValidation()
-        
         // Button Configuration
         googleSignIn.layer.cornerRadius = 25
         googleSignIn.addTarget(self, action: #selector(signInGoogle(_:)), for: .touchUpInside)
@@ -107,24 +104,7 @@ class ViewController: UIViewController {
         view.endEditing(true)
     }
     
-    // MARK: - Email validation
-    func emailValidation() {
-        tf_correoElectronico.bind { [weak self] (text) in if let isValid = self?.isValidEmail(text) {
-                if (isValid == true) {
-                    self?.emailIsValid = true
-                }
-            }
-        }
-    }
-    
-    func isValidEmail(_ email: String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailPred.evaluate(with: email)
-    }
-
-    
-    // MARK:- Notification
+    // MARK: - Notification
         @objc private func userDidSignInGoogle(_ notification: Notification) {
             // Update screen after user successfully signed in
             updateScreen()
@@ -162,19 +142,6 @@ extension ViewController: ASAuthorizationControllerPresentationContextProviding 
     }
 }
 
-class BindingTextField: UITextField {
-    var textEdited: ((String) -> Void)? = nil
-
-    func bind(completion: @escaping (String) -> Void) {
-        textEdited = completion
-        addTarget(self, action: #selector(textFieldEditingChanged (_:)), for: .editingChanged)
-    }
-
-    @objc func textFieldEditingChanged(_ textField: UITextField) {
-        guard let text = textField.text else { return }
-        textEdited?(text)
-    }
-}
 
 
 
