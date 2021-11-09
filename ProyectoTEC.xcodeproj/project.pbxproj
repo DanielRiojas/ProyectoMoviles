@@ -13,6 +13,8 @@
 		3EC75D6B27193443006FD151 /* ViewControllerCofigPerfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC75D6A27193443006FD151 /* ViewControllerCofigPerfil.swift */; };
 		3EEAEAEA2718A6AA00F3A2EF /* ViewControllerMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEAEAE92718A6AA00F3A2EF /* ViewControllerMenu.swift */; };
 		C473F2F26D3A4B020AAB913E /* Pods_ProyectoTEC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2411556C3B513E9A8CFB65E7 /* Pods_ProyectoTEC.framework */; };
+		DA58267A273978F3002BA4F5 /* TableViewControllerDetallesPaciente.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA582679273978F3002BA4F5 /* TableViewControllerDetallesPaciente.swift */; };
+		DA58267C27397E19002BA4F5 /* ViewControllerDoctorPaciente.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA58267B27397E19002BA4F5 /* ViewControllerDoctorPaciente.swift */; };
 		EB1B5F272718831B00F9373F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB1B5F262718831B00F9373F /* GoogleService-Info.plist */; };
 		EB2D88DB272706C6006EC15A /* ViewControllerDoctorVistaGeneral.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2D88DA272706C6006EC15A /* ViewControllerDoctorVistaGeneral.swift */; };
 		EB3CF02E270FB039000E4508 /* ViewControllerRegistrate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3CF02D270FB039000E4508 /* ViewControllerRegistrate.swift */; };
@@ -33,8 +35,8 @@
 		3EC75D6A27193443006FD151 /* ViewControllerCofigPerfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerCofigPerfil.swift; sourceTree = "<group>"; };
 		3EEAEAE92718A6AA00F3A2EF /* ViewControllerMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMenu.swift; sourceTree = "<group>"; };
 		58B1DCE690A4D6BD42CA714F /* Pods-ProyectoTEC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoTEC.release.xcconfig"; path = "Target Support Files/Pods-ProyectoTEC/Pods-ProyectoTEC.release.xcconfig"; sourceTree = "<group>"; };
-		64A7F9442718D27700E03786 /* BaseDatos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDatos.swift; sourceTree = "<group>"; };
-		64A7F9472718D28600E03786 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		DA582679273978F3002BA4F5 /* TableViewControllerDetallesPaciente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewControllerDetallesPaciente.swift; sourceTree = "<group>"; };
+		DA58267B27397E19002BA4F5 /* ViewControllerDoctorPaciente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDoctorPaciente.swift; sourceTree = "<group>"; };
 		EB1B5F262718831B00F9373F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EB2D88DA272706C6006EC15A /* ViewControllerDoctorVistaGeneral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDoctorVistaGeneral.swift; sourceTree = "<group>"; };
 		EB3CF02D270FB039000E4508 /* ViewControllerRegistrate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerRegistrate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				EB8682F3271510050076759B /* ViewControllerOlvidarContrasena.swift */,
 				EBAA1B07270B529400AD32AB /* ViewController.swift */,
 				EBAA1B09270B529400AD32AB /* Main.storyboard */,
+				DA58267B27397E19002BA4F5 /* ViewControllerDoctorPaciente.swift */,
 				3EC75D6A27193443006FD151 /* ViewControllerCofigPerfil.swift */,
 				3E659FB42733A270000D3F54 /* CustomTableViewCell.swift */,
 				3EEAEAE92718A6AA00F3A2EF /* ViewControllerMenu.swift */,
@@ -118,6 +121,7 @@
 				EBAA1B0E270B529B00AD32AB /* LaunchScreen.storyboard */,
 				EBAA1B11270B529B00AD32AB /* Info.plist */,
 				EB2D88DA272706C6006EC15A /* ViewControllerDoctorVistaGeneral.swift */,
+				DA582679273978F3002BA4F5 /* TableViewControllerDetallesPaciente.swift */,
 			);
 			path = ProyectoTEC;
 			sourceTree = "<group>";
@@ -256,9 +260,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EEAEAEA2718A6AA00F3A2EF /* ViewControllerMenu.swift in Sources */,
+				DA58267C27397E19002BA4F5 /* ViewControllerDoctorPaciente.swift in Sources */,
 				EBAA1B08270B529400AD32AB /* ViewController.swift in Sources */,
 				EB2D88DB272706C6006EC15A /* ViewControllerDoctorVistaGeneral.swift in Sources */,
-				64A7F9482718D28600E03786 /* Location.swift in Sources */,
 				EBAA1B04270B529400AD32AB /* AppDelegate.swift in Sources */,
 				3EC75D6B27193443006FD151 /* ViewControllerCofigPerfil.swift in Sources */,
 				3E7D573D27189AF700435630 /* ViewControllerCambiarContrasena.swift in Sources */,
@@ -266,6 +270,7 @@
 				3E659FB52733A270000D3F54 /* CustomTableViewCell.swift in Sources */,
 				3E659FB22733971E000D3F54 /* celdaSintomas.swift in Sources */,
 				EBAA1B06270B529400AD32AB /* SceneDelegate.swift in Sources */,
+				DA58267A273978F3002BA4F5 /* TableViewControllerDetallesPaciente.swift in Sources */,
 				EB8682F4271510050076759B /* ViewControllerOlvidarContrasena.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
