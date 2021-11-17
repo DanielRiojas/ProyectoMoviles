@@ -5,6 +5,8 @@
 //  Created by user197925 on 10/7/21.
 //
 
+import FirebaseAuth
+import Firebase
 import UIKit
 
 class ViewControllerRegistrate: UIViewController {
@@ -19,6 +21,7 @@ class ViewControllerRegistrate: UIViewController {
     @IBOutlet weak var tf_apellidoMaterno: UITextField!
     @IBOutlet weak var tf_fechaNacimiento: UITextField!
     
+    let db = Firestore.firestore()
     var emailIsValid = false
     var datePicker: UIDatePicker?
     var pickerToolbar: UIToolbar?
@@ -118,5 +121,26 @@ class ViewControllerRegistrate: UIViewController {
         }
     }
     
+    //MARK: - add data
+    func addData(unLogIn: LogIn){
+       let _ = db.collection("Login").addDocument(data: ["nombre": unLogIn.nombre, "apellidoPaterno": unLogIn.apellidoPat, "apellidoMaterno": unLogIn.apellidoMat, "fechaNacimiento": unLogIn.fechaNac, "email": unLogIn.email, "password": unLogIn.password])
+        print("add data successfull")
+    }
 
+
+    
+    //MARK:- database
+    @IBAction func registerPressed(_ sender: AnyObject) {
+        Auth.auth().createUser(withEmail: tf_correo.text!, password: tf_contrasena.text!) {
+            (user, error) in
+            
+            if error != nil {
+                print(error!)
+            }
+            else {
+                print("registration successful")
+            }
+        }
+    }
+    
 }

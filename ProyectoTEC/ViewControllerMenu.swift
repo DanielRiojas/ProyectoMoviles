@@ -5,6 +5,9 @@
 //  Created by Daniel Riojas on 14/10/21.
 //
 
+import FirebaseAuth
+import FirebaseFirestore
+import Firebase
 import UIKit
 
 class ViewControllerMenu: UIViewController, UITableViewDelegate, UITableViewDataSource{
@@ -37,6 +40,22 @@ class ViewControllerMenu: UIViewController, UITableViewDelegate, UITableViewData
         
         return cell
     }
+    
+    //MARK: - logout databse
+    
+    @IBAction func logOutPressed(_ sender: Any) {
+        //TODO: Log out the user and send them back to WelcomeViewController
+        do {
+            try Auth.auth().signOut()
+            print("Logout successfull")
+            self.dismiss(animated: true, completion: nil)
+        }
+        catch {
+            print ("Error, there was a problem singing out")
+        }
+        
+    }
+
 
     /*
     // MARK: - Navigation

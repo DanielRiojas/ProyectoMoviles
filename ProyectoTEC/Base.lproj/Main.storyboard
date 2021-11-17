@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -107,7 +106,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="7ft-81-zQX" kind="presentation" id="BCh-mr-2fa"/>
+                                    <action selector="logInPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M8K-v5-gAd"/>
+                                    <segue destination="7ft-81-zQX" kind="presentation" identifier="login" id="BCh-mr-2fa"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -206,6 +206,9 @@
                                 <state key="normal" title="Cerrar sesión">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="logOutPressed:" destination="7ft-81-zQX" eventType="touchUpInside" id="mIH-1o-hYa"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="twu-Ef-jao">
                                 <rect key="frame" x="230" y="136" width="125" height="30"/>
@@ -239,7 +242,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="celda" id="mbh-oy-2xL" customClass="CustomTableViewCell" customModule="ProyectoTEC" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="298" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="298" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mbh-oy-2xL" id="Ytq-Y3-9lK">
                                             <rect key="frame" x="0.0" y="0.0" width="298" height="43.5"/>
@@ -754,6 +757,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="registerPressed:" destination="4Yv-aO-N8L" eventType="touchUpInside" id="uUy-lo-hxB"/>
                                     <segue destination="7lP-vr-AoR" kind="unwind" unwindAction="unwindRegistrateWithSegue:" id="yhN-cu-H04"/>
                                 </connections>
                             </button>
@@ -797,7 +801,7 @@
                                 </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="celda" id="wKb-SQ-lQc">
-                                        <rect key="frame" x="0.0" y="88.5" width="347" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="72" width="347" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wKb-SQ-lQc" id="Phu-Og-n91">
                                             <rect key="frame" x="0.0" y="0.0" width="347" height="43.5"/>
@@ -844,6 +848,9 @@
                                 <state key="normal" title="Cerrar sesión">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="logOutPressed:" destination="8VB-vW-nhb" eventType="touchUpInside" id="TKV-2A-4Iu"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBG-8U-QG3">
                                 <rect key="frame" x="223" y="165" width="140" height="30"/>
@@ -929,15 +936,15 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Nombre" id="VKG-rP-uBi">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="zbL-4M-Lrd">
-                                        <rect key="frame" x="0.0" y="328" width="375" height="30.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="zbL-4M-Lrd">
+                                        <rect key="frame" x="0.0" y="334" width="375" height="30.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zbL-4M-Lrd" id="NN3-Zf-mIR">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="30.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hT5-sI-qvZ">
-                                                    <rect key="frame" x="10" y="5" width="355" height="20.5"/>
+                                                    <rect key="frame" x="10" y="5" width="355" height="34"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -956,7 +963,7 @@
                             <tableViewSection headerTitle="Apellido paterno" id="3o4-Kv-8Ye">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="4TT-12-WmX">
-                                        <rect key="frame" x="0.0" y="408.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="420.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4TT-12-WmX" id="qTP-MT-5Yz">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -977,7 +984,7 @@
                             <tableViewSection headerTitle="Apellido materno" id="oPY-1i-rJX">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="wGS-8O-m6Y">
-                                        <rect key="frame" x="0.0" y="502.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="520.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wGS-8O-m6Y" id="nTj-Ty-Fsx">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -998,7 +1005,7 @@
                             <tableViewSection headerTitle="Fecha de nacimiento" id="uay-7A-MqN">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="fxk-6M-RsU">
-                                        <rect key="frame" x="0.0" y="596.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="620.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fxk-6M-RsU" id="ytF-On-81G">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1019,7 +1026,7 @@
                             <tableViewSection headerTitle="Sexo" id="ffa-0A-FqD">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Y5q-sM-c9v">
-                                        <rect key="frame" x="0.0" y="690.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="720.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y5q-sM-c9v" id="qZF-o5-Z57">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1040,7 +1047,7 @@
                             <tableViewSection headerTitle="Número de telefono" id="xBm-P1-4ju">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="kiQ-CI-NX5">
-                                        <rect key="frame" x="0.0" y="784.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="820.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kiQ-CI-NX5" id="aL5-0r-3YR">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1061,7 +1068,7 @@
                             <tableViewSection headerTitle="Ubicación" id="xFV-Qk-2XF">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="DTE-FS-GsD">
-                                        <rect key="frame" x="0.0" y="878.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="920.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DTE-FS-GsD" id="IOo-Tl-caB">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1108,7 +1115,7 @@
         <image name="icons8-google-30" width="30" height="30"/>
         <image name="user" width="200" height="200"/>
         <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -5,6 +5,9 @@
 //  Created by user197925 on 10/4/21.
 //
 
+import FirebaseAuth
+import Firebase
+import FirebaseFirestore
 import UIKit
 import GoogleSignIn
 import AuthenticationServices
@@ -60,6 +63,12 @@ class ViewController: UIViewController {
         tf_contrasena.text = contrasena
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        return false
+    
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -109,8 +118,25 @@ class ViewController: UIViewController {
             // Update screen after user successfully signed in
             updateScreen()
         }
+    
+    //MARK: - Login database
+    
+    @IBAction func logInPressed(_ sender: Any) {
+        //TODO: Log in the user
+        Auth.auth().signIn(withEmail: tf_correoElectronico.text!, password: tf_contrasena.text!) {
+            (user, error) in
+            
+            if error != nil {
+                print(error!)
+            }
+            else {
+                print("login successfull")
+                self.performSegue(withIdentifier: "login", sender: self)
+        
+            }
+        }
     }
-
+}
 
 
 extension ViewController: ASAuthorizationControllerDelegate {
@@ -141,7 +167,3 @@ extension ViewController: ASAuthorizationControllerPresentationContextProviding 
         return view.window!
     }
 }
-
-
-
-

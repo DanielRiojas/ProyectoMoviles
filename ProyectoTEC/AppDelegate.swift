@@ -5,12 +5,15 @@
 //  Created by user197925 on 10/4/21.
 //
 
+import FirebaseAuth
+import FirebaseFirestore
+import Firebase
 import UIKit
 import GoogleSignIn
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
-
+    var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -20,6 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         // If user already sign in, restore sign-in state.
         //GIDSignIn.sharedInstance()?.restorePreviousSignIn()
+        //MARK: - database
+        
+        FirebaseApp.configure()
         return true
     }
     
@@ -58,6 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+
 }
 
 // MARK:- Notification names
@@ -67,5 +74,9 @@ extension Notification.Name {
     static var signInGoogleCompleted: Notification.Name {
         return .init(rawValue: #function)
     }
+    
 }
+
+
+
 

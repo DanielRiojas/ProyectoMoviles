@@ -5,6 +5,9 @@
 //  Created by user197925 on 10/25/21.
 //
 
+import FirebaseAuth
+import FirebaseFirestore
+import Firebase
 import UIKit
 
 class ViewControllerDoctorVistaGeneral: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
@@ -79,5 +82,17 @@ class ViewControllerDoctorVistaGeneral: UIViewController, UITableViewDelegate, U
         }
         self.tableView.reloadData()
     }
-
-}
+    //MARK: - logout databse
+    
+    @IBAction func logOutPressed(_ sender: Any) {
+        //TODO: Log out the user and send them back to WelcomeViewController
+        do {
+            try Auth.auth().signOut()
+            print("Logout successfull")
+            self.dismiss(animated: true, completion: nil)
+        }
+        catch {
+            print ("Error, there was a problem singing out")
+        }
+    }
+    }

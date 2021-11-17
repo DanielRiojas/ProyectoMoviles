@@ -4,7 +4,9 @@
 //
 //  Created by user197925 on 10/11/21.
 //
-
+import FirebaseAuth
+import Firebase
+import FirebaseFirestore
 import UIKit
 
 class ViewControllerOlvidarContrasena: UIViewController {
@@ -17,6 +19,8 @@ class ViewControllerOlvidarContrasena: UIViewController {
     
     @IBOutlet weak var verificaDatos: UIButton! // Buttons
     
+    let db = Firestore.firestore()
+    var listaLogin = [" "]
     var emailIsValid = false
     var datePicker: UIDatePicker?
     var pickerToolbar: UIToolbar?
@@ -29,6 +33,7 @@ class ViewControllerOlvidarContrasena: UIViewController {
         
         // Button Configuration
         verificaDatos.layer.cornerRadius = 25
+        
         
         // Tap Gesture
         let tap = UITapGestureRecognizer(target: self, action: #selector(quitaTeclado))
@@ -60,9 +65,7 @@ class ViewControllerOlvidarContrasena: UIViewController {
         tf_fechaNacimiento.text = dateFormatter.string(from: datePicker!.date)
         view.endEditing(true)
         }
-    
-
-    
+        
     // MARK: - Prepare for segue
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
@@ -94,5 +97,34 @@ class ViewControllerOlvidarContrasena: UIViewController {
              
          }
      }
+    
+    //MARK:- obtener datos
+    func getData(){
+        db.collection("Login").order(by: "nombre").getDocuments(){ (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            }else {
+                guard let _ = querySnapshot else { return }
+                
+                self.listaLogin.removeAll()
+                
+                for document in querySnapshot!.documents{
+                    let data = document.data()
+                    let nombre = data["nombre"] as! String
+                    let apellidoPat = data["apellidoPaterno"] as! String
+                    let apellidoMat = data["apellidoMaterno"] as! String
+                    let fechaNac = data["fechaNacimiento"] as! String
+                    let email = data["email"] as! String
+                    let password = data["password"] as! String
+                    let ident = document.documentID
+                    
+                    let nuevoLogin = LogIn()
+                    
+                    //self.listaLogin.append(nuevoLogin)
+                }
+                   // self.tableView.reloadData()
+            }
+        }
+    }
 
 }

@@ -5,6 +5,9 @@
 //  Created by user197925 on 10/11/21.
 //
 
+import FirebaseAuth
+import FirebaseFirestore
+import Firebase
 import UIKit
 
 class ViewControllerCambiarContrasena: UIViewController {
@@ -14,6 +17,7 @@ class ViewControllerCambiarContrasena: UIViewController {
     
     @IBOutlet weak var cambiarContrasena: UIButton! // Buttons
     
+    let db = Firestore.firestore()
     var correo = ""
     
     override func viewDidLoad() {
@@ -67,5 +71,21 @@ class ViewControllerCambiarContrasena: UIViewController {
             vistaIni.contrasena = tf_confirmaContrasena.text!
         }
     }
+    
+    //MARK: - Modificar datos (password)
+    
+    /*func updateData(unLogIn: LogIn){
+        if let docID = unLogIn.ident{
+            do {
+                try db.collection ("login").document(ID).setData(unLogIn)
+            }
+            catch {
+                print ("Error while trying to update \(error.localizedDescription)")
+            }
+        }
+            else {
+            print ("Error while trying to update, no id is avaliable")
+        }
+    }*/
 
 }

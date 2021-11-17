@@ -13,8 +13,16 @@ class ViewControllerCofigPerfil: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
     
+    // Tap Gesture
+    let tap = UITapGestureRecognizer(target: self, action: #selector(quitaTeclado))
+    view.addGestureRecognizer(tap)
+}
+
+// MARK: - Eliminate Keyboard
+@IBAction func quitaTeclado() {
+    view.endEditing(true)
+}
 
     /*
     // MARK: - Navigation
